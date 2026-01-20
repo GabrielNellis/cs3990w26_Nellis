@@ -31,5 +31,6 @@ p {
 }
 
 .scroll-btn{
-  font-weight: bold
+  font-weight: bold;
+  border-style: outset
 }
