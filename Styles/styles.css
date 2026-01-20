@@ -10,8 +10,26 @@ h1 {
 
 h2 {
   color: rgb(5, 54, 122);
+  font-style: italic; 
+}
+
+h3 {
+  background-color: rgb(26, 105, 179);
 }
 
 p {
   color: rgb(3, 60, 62);
+}
+
+.imageBlue{
+  border: 3px solid blue
+}
+
+.persona{
+  float: right;
+  border: 3px solid rgb(53, 255, 53)
+}
+
+.scroll-btn{
+  font-weight: bold
 }
