@@ -1,6 +1,6 @@
 * {
   color: rgb(1, 1, 69);
-  background-color: rgb(133, 242, 209)!important;
+  background-color: rgb(210, 210, 210);
 }
 
 h1 {
@@ -14,24 +14,83 @@ h2 {
 }
 
 h3 {
-  background-color: rgb(26, 105, 179);
+  background-color: rgb(255, 255, 255);
+}
+
+.bg{
+  background: url("../Images/new_background.jpg");
+  background-attachment: fixed;
+}
+
+.bg *{
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 p {
   color: rgb(3, 60, 62);
+  line-height: 30px;
+}
+
+.p1{
+  font-size: 16px;
+  color: rgb(0, 172, 172)!important
+}
+
+.p2 *{
+  font-size: 20px;
+  color: rgb(194, 62, 187)!important
+}
+
+.p3{
+  font-size: 18px;
+  color: rgb(166, 89, 22)!important
+}
+
+.scroll-btn{
+  font-weight: bold;
+  border-width: 3px;
+  border-style: outset;
+  border-color: rgb(255, 255, 255)
 }
 
 .imageBlue{
   border: 3px solid blue
 }
 
+.imageWhite{
+  border: 3px solid white;
+  float: right
+}
+
+.imageRed{
+  border: 3px solid red;
+}
+
+.imageSky{
+  border: 3px solid rgb(27, 175, 212)
+}
+
+.imageGreen{
+  border: 3px solid rgb(0, 255, 0)
+}
+
+.imageCoding{
+  border-style: solid;
+  border-width: 3px;
+  border-color: green, green, black, black;
+}
+
+.imageCollege{
+  border: 3px solid gold;
+  float: right;
+}
+
+.imageBlack{
+  float: right;
+  border: 3px solid black
+}
+
 .persona{
   float: right;
   border: 3px solid rgb(53, 255, 53)
-}
-
-.scroll-btn{
-  font-weight: bold;
-  border-width: 3px;
-  border-style: outset
 }
