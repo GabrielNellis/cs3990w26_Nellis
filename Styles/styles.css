@@ -1,17 +1,116 @@
 * {
   color: rgb(1, 1, 69);
-  background-color: rgb(133, 242, 209)!important;
+  background-color: rgb(229, 234, 247);
 }
 
 h1 {
-  color: rgb(125, 24, 46);
-  background-color: rgb(216, 230, 91);
+  color: rgb(0, 0, 0);
 }
 
 h2 {
   color: rgb(5, 54, 122);
+  font-style: italic; 
+}
+
+h3 {
+  background-color: rgb(255, 255, 255);
 }
 
 p {
   color: rgb(3, 60, 62);
+  line-height: 30px;
+}
+
+.box{
+  display: block;
+  background-color: #939bed;
+  text-align: center;
+  border: 3px solid black;
+}
+
+.wideBox{
+  width: 97%;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.menuBox{
+  width: 97%;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: left !important;
+}
+
+.profile{
+  height: 100px;
+  width: 100px;
+  left: -12px;
+  top: -12px;
+  border: 3px solid black;
+  float: left;
+  position: relative;
+}
+
+.mainContent{
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.aside1{
+  position: sticky;
+  width: 5%;
+  margin: 0px auto;
+  padding: 20px;
+  float: left;
+}
+
+.aside2{
+  width: 5%;
+  margin: 0px auto;
+  padding: 20px;
+  float: left;
+}
+
+.aside3{
+  width: 5%;
+  margin: 0px auto;
+  padding: 20px;
+  float: right;
+}
+
+.box h1,
+.box h2,
+.box h3,
+.box p,
+.box ol,
+.box ul,
+.box li,
+.box a{
+  background: transparent;
+}
+
+.NWPphoto1{
+  position: relative;
+  border: 3px solid black;
+  left: -15px;
+  top: -5px;
+}
+
+.NWPphoto2{
+  position: relative;
+  border: 3px solid black;
+  left: -8px;
+  border-radius: 8px;
+}
+
+.menuButton{
+  color: blue;
+  border: 2px solid blue;
+  border-radius: 8px;
+}
+
+.menuButton:hover{
+  color: rgb(197, 0, 197) !important;
+  border: 2px solid rgb(197, 0, 197) !important;
 }
