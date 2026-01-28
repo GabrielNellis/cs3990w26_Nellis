@@ -68,14 +68,14 @@ p {
 }
 
 .aside2{
-  width: 5%;
+  width: 85px;
   margin: 0px auto;
   padding-left: 15px;
   padding-right: 25px;
-  margin-right: 10px;
   float: left;
   position: relative;
   top: -350px;
+  text-align: left;
 }
 
 .aside3{
@@ -93,15 +93,22 @@ p {
   background: transparent;
 }
 
-.box ol{
-  background-color: rgb(96, 96, 255);
-  padding-left: 20px;
-  font-size: 12px;
+.listed{
+  background-color: rgb(0, 0, 166);
+  color: white;
 }
 
-.listed{
-  background-color: blue;
+.listofitems li {
+  color: black;
   margin-bottom: 5px;
+  background-color: rgb(104, 104, 255);
+  width: auto;
+}
+
+.listofitems {
+  margin: 0;
+  padding-left: 0px;
+  list-style-position: inside;
 }
 
 .NWPphoto1{
