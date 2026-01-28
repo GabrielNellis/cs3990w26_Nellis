@@ -59,48 +59,61 @@ p {
 
 .aside1{
   position: sticky;
+  top: 0;
   width: 5%;
   margin: 0px auto;
   padding: 20px;
   float: left;
+  z-index: 2;
 }
 
 .aside2{
   width: 5%;
   margin: 0px auto;
-  padding: 20px;
+  padding-left: 15px;
+  padding-right: 25px;
+  margin-right: 10px;
   float: left;
+  position: relative;
+  top: -350px;
 }
 
 .aside3{
-  width: 5%;
+  font-size: 12px;
+  width: 115px;
+  height: 400px;
   margin: 0px auto;
-  padding: 20px;
+  padding-left: 0px;
+  padding-right: 5px;
+  padding-bottom: 15px;
   float: right;
 }
 
-.box h1,
-.box h2,
-.box h3,
-.box p,
-.box ol,
-.box ul,
-.box li,
-.box a{
+.box *{
   background: transparent;
 }
 
+.box ol{
+  background-color: rgb(96, 96, 255);
+  padding-left: 20px;
+  font-size: 12px;
+}
+
+.listed{
+  background-color: blue;
+  margin-bottom: 5px;
+}
+
 .NWPphoto1{
-  position: relative;
+  position: sticky;
   border: 3px solid black;
-  left: -15px;
-  top: -5px;
+  top: 0;
 }
 
 .NWPphoto2{
   position: relative;
   border: 3px solid black;
-  left: -8px;
+  left: 12px;
   border-radius: 8px;
 }
 
@@ -108,9 +121,64 @@ p {
   color: blue;
   border: 2px solid blue;
   border-radius: 8px;
+  background-color: rgb(157, 162, 193);
+  text-decoration: none;
 }
 
 .menuButton:hover{
   color: rgb(197, 0, 197) !important;
   border: 2px solid rgb(197, 0, 197) !important;
+  background-color: white;
+  text-decoration: underline;
+}
+
+.links-right{
+  display: block;
+  left: 40px;
+  height: 5%;
+  float: right !important;
+}
+
+.socialButton{
+  filter: grayscale(90%) brightness(75%);
+  text-decoration: none;
+}
+
+.socialButton:hover{
+  filter: grayscale(0%) brightness(100%);
+}
+
+.todolisteven{
+  background-color: rgb(63, 63, 163);
+}
+
+.todolistodd{
+  background-color: rgb(84, 84, 218);
+}
+
+.todolistdone{
+  background-color: rgb(191, 191, 191);
+  text-decoration: line-through;
+}
+
+.footer{
+  width: 96%;
+  position: fixed !important;
+  bottom: -15px;
+}
+
+.todolistdone::after,
+.todolisteven::after,
+.todolistodd::after{
+  content: "  \2717";
+  color: rgb(255, 0, 0);
+}
+
+.todolisteven::before,
+.todolistodd::before{
+  content: "\2610  ";
+}
+
+.todolistdone::before{
+  content: "\2611  ";
 }
