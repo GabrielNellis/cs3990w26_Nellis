@@ -1,5 +1,5 @@
 * {
-  color: rgb(1, 1, 69);
+  color: rgb(0, 0, 0);
   background-color: rgb(229, 234, 247);
 }
 
@@ -8,184 +8,211 @@ h1 {
 }
 
 h2 {
-  color: rgb(5, 54, 122);
+  color: rgb(245, 201, 147);
+  background-color: rgb(66, 37, 2) !important;
   font-style: italic; 
 }
 
 h3 {
-  background-color: rgb(255, 255, 255);
+  color: rgb(245, 201, 147);
+  font-style: italic;
 }
 
-p {
-  color: rgb(3, 60, 62);
-  line-height: 30px;
+article:first-of-type{
+  background-color: rgb(66, 37, 2);
+  padding: 2px;
 }
 
-.box{
-  display: block;
-  background-color: #939bed;
+article:first-of-type *{
+  background-color: rgb(255, 227, 194);
+  position: relative;
+  margin: 10px;
+}
+
+article:last-of-type{
+  background-color: rgb(245, 201, 147);
+}
+
+article:last-of-type *{
+  background-color: rgb(66, 37, 2);
+  color: rgb(245, 201, 147);
+  position: relative;
+  margin: 10px;
+}
+
+article:first-of-type li:not(.special){
+  color: rgb(175, 0, 0);
+}
+
+article:first-of-type li:first-of-type{
+  background-color:rgb(255, 145, 66);
+  width: fit-content;
+}
+
+article:first-of-type li:nth-child(odd){
+  font-weight: bold;
+}
+
+article:first-of-type li:nth-child(4){
+  font-style: italic;
+}
+
+blockquote::before{
+  content: open-quote;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  font-size: 100px;
+  background-color: rgb(245, 191, 55);
+  border-radius: 50%;
   text-align: center;
-  border: 3px solid black;
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
 
-.wideBox{
-  width: 97%;
-  margin: 20px auto;
-  padding: 20px;
+blockquote::after{
+  display: inline-block;
+  text-align: center;
+  width: 80px;
+  height: 80px;
+  content: close-quote;
+  background-color: rgb(245, 191, 55);
+  border-radius: 50%;
+  font-size: 100px;
+  position: absolute;
+  left: 45%;
 }
 
-.menuBox{
-  width: 97%;
-  margin: 20px auto;
-  padding: 20px;
-  text-align: left !important;
-}
-
-.profile{
-  height: 100px;
-  width: 100px;
-  left: -12px;
-  top: -12px;
-  border: 3px solid black;
-  float: left;
+blockquote{
+  font-style: italic;
   position: relative;
+  padding: 80px 120px;
+  padding-right: 58%;
 }
 
-.mainContent{
-  width: 80%;
-  margin: 20px auto;
-  padding: 20px;
-}
-
-.aside1{
-  position: sticky;
-  top: 0;
-  width: 5%;
-  margin: 0px auto;
-  padding: 20px;
-  float: left;
-  z-index: 2;
-}
-
-.aside2{
-  width: 85px;
-  margin: 0px auto;
-  padding-left: 15px;
-  padding-right: 25px;
-  float: left;
-  position: relative;
-  top: -350px;
+article:first-of-type .task1{
+  padding: 5px; 
   text-align: left;
 }
 
-.aside3{
-  font-size: 12px;
-  width: 115px;
-  height: 400px;
-  margin: 0px auto;
-  padding-left: 0px;
-  padding-right: 5px;
-  padding-bottom: 15px;
-  float: right;
+article:first-of-type .task1:hover{
+  padding-top: 20px;
 }
 
-.box *{
-  background: transparent;
+article:first-of-type .task1 div{
+  visibility: hidden;
+  background: rgb(245, 131, 0);
+  border-radius: 8px;
+  padding-bottom: 6px;
+  display: table;
 }
 
-.listed{
-  background-color: rgb(0, 0, 166);
+article:first-of-type .task1:hover div{
+  visibility: visible;
+}
+
+article:first-of-type .task1 > div::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 10%;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgb(245, 131, 0);
+}
+
+article:last-of-type .task1:hover h4{
+  color: rgb(184, 59, 2) !important;
+}
+
+.task1:hover blockquote::before,
+.task1:hover blockquote::after{
+  background-color: rgb(184, 59, 2);
+}
+
+article:last-of-type li:nth-child(odd)::marker{
   color: white;
 }
 
-.listofitems li {
-  color: black;
-  margin-bottom: 5px;
-  background-color: rgb(104, 104, 255);
-  width: auto;
+article:last-of-type li:nth-child(even)::marker{
+  content: "\1F60A";
 }
 
-.listofitems {
-  margin: 0;
-  padding-left: 0px;
-  list-style-position: inside;
+.task3{
+  margin: 5px 80px;
 }
 
-.NWPphoto1{
-  position: sticky;
-  border: 3px solid black;
-  top: 0;
+.task3 span:first-of-type::before{
+  content:">> "
 }
 
-.NWPphoto2{
-  position: relative;
-  border: 3px solid black;
-  left: 12px;
-  border-radius: 8px;
+.task3 span:first-of-type::after{
+  content:" /"
 }
 
-.menuButton{
-  color: blue;
-  border: 2px solid blue;
-  border-radius: 8px;
-  background-color: rgb(157, 162, 193);
-  text-decoration: none;
-}
-
-.menuButton:hover{
-  color: rgb(197, 0, 197) !important;
-  border: 2px solid rgb(197, 0, 197) !important;
-  background-color: white;
-  text-decoration: underline;
-}
-
-.links-right{
+.task3 .correct{
   display: block;
-  left: 40px;
-  height: 5%;
-  float: right !important;
+  background-color: rgb(86, 49, 3);
+  padding: 20px;
+  margin: 5px 80px;
 }
 
-.socialButton{
-  filter: grayscale(90%) brightness(75%);
-  text-decoration: none;
+.task3 .wrong{
+  display: block;
+  background-color: rgb(86, 49, 3);
+  padding: 20px;
+  margin: 5px 80px;
 }
 
-.socialButton:hover{
-  filter: grayscale(0%) brightness(100%);
+.task3 .correct::after{
+  content: "\2713";
+  color: rgb(0, 227, 0);
+  position: absolute;
+  font-size: 100px;
+  position: absolute;
+  top: -34px;
+  left: 50%;
 }
 
-.todolisteven{
-  background-color: rgb(63, 63, 163);
+.task3 .wrong::after{
+  content: "\0058";
+  color: red;
+  font-size: 100px;
+  position: absolute;
+  top: -20px;
+  left: 50%;
 }
 
-.todolistodd{
-  background-color: rgb(84, 84, 218);
+.task3:has(span:first-child:hover) .correct{
+  background-color: rgb(112, 63, 4);
 }
 
-.todolistdone{
-  background-color: rgb(191, 191, 191);
-  text-decoration: line-through;
+.task3:has(span:nth-of-type(2):hover) .wrong{
+  background-color: rgb(112, 63, 4);
 }
 
-.footer{
-  width: 96%;
-  position: fixed !important;
-  bottom: -15px;
+.task3 span:first-child:hover{
+  background-color: rgb(112, 63, 4);
 }
 
-.todolistdone::after,
-.todolisteven::after,
-.todolistodd::after{
-  content: "  \2717";
-  color: rgb(255, 0, 0);
+.task3 span:nth-of-type(2):hover{
+  background-color: rgb(112, 63, 4);
 }
 
-.todolisteven::before,
-.todolistodd::before{
-  content: "\2610  ";
+article:hover div{
+  filter: brightness(60%);
 }
 
-.todolistdone::before{
-  content: "\2611  ";
+article:has(div:hover) div:hover,
+article:has(div:hover) div:hover *{
+  filter: brightness(100%);
+}
+
+article:first-of-type div:hover{
+  border: 3px solid red;
+}
+
+article:last-of-type div:hover{
+  border: 3px dotted pink;
 }
