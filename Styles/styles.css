@@ -96,20 +96,17 @@ article:first-of-type .task1{
   text-align: left;
 }
 
-article:first-of-type .task1:hover{
-  padding-top: 20px;
-}
-
 article:first-of-type .task1 div{
   visibility: hidden;
   background: rgb(245, 131, 0);
   border-radius: 8px;
   padding-bottom: 6px;
-  display: table;
+  display: none;
 }
 
 article:first-of-type .task1:hover div{
   visibility: visible;
+  display: table;
 }
 
 article:first-of-type .task1 > div::after {
@@ -122,13 +119,13 @@ article:first-of-type .task1 > div::after {
   border-top: 6px solid rgb(245, 131, 0);
 }
 
-article:last-of-type .task1:hover h4{
+article:last-of-type .task1:has(blockquote:hover) h4{
   color: rgb(184, 59, 2) !important;
 }
 
-.task1:hover blockquote::before,
-.task1:hover blockquote::after{
-  background-color: rgb(184, 59, 2);
+article:last-of-type .task1 blockquote:hover::after,
+article:last-of-type .task1 blockquote:hover::before{
+  background-color: rgb(184, 59, 2) !important;
 }
 
 article:last-of-type li:nth-child(odd)::marker{
@@ -209,10 +206,13 @@ article:has(div:hover) div:hover *{
   filter: brightness(100%);
 }
 
-article:first-of-type div:hover{
+article:first-of-type .task1:hover,
+article:first-of-type .task2:hover{
   border: 3px solid red;
 }
 
-article:last-of-type div:hover{
+article:last-of-type .task1:hover,
+article:last-of-type .task2:hover,
+article:last-of-type .task3:hover{
   border: 3px dotted pink;
 }
