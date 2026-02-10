@@ -4,16 +4,11 @@
 }
 
 h1 {
-  color: rgb(125, 24, 46);
-  background-color: rgb(216, 230, 91);
-}
-
-h2 {
-  color: rgb(5, 54, 122);
+  color: rgb(77, 14, 102);
 }
 
 p {
-  color: rgb(3, 60, 62);
+  color: rgb(77, 14, 102);
 }
 
 header{
@@ -131,7 +126,7 @@ header *{
 }
 
 .job{
-  width: 45%;
+  width: 40%;
   margin: 0px 10px 25px 10px;
 }
 
@@ -151,6 +146,9 @@ header *{
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   background-color: rgb(4, 216, 4);
+  width: 80%;
+  text-align: left;
+  color: rgb(11, 11, 91);
 }
 
 .jobTitle{
@@ -161,7 +159,7 @@ header *{
 
 .jobTitleThings{
   position: relative;
-  padding: 50px 20px;
+  padding: 25% 2%;
   background-color: rgb(107, 15, 134);
   border-top-right-radius: 22%;
 }
@@ -250,9 +248,58 @@ header *{
 
   .jobsTab{
     flex-direction: column;
+    margin-bottom: 30px;
   }
 
   .footer{
     width: 90%;
   }
+
+  .jobTitleThings{
+    padding: 15% 5%;
+  }
+}
+
+@media(max-width: 790px){
+  .jobTitle.popular{
+    display: inline-block;
+    padding-top: 20px;
+  }
+}
+
+.provincesList{
+  list-style: none;
+  padding-left: 0px;
+  margin-bottom: 50px;
+}
+
+.provincesList li{
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 8px;
+}
+
+.provincesSize{
+  display: none;
+  font-style: italic;
+}
+
+.provincesList li:hover .provincesSize{
+  display: inline-block;
+  background-color: transparent;
+}
+
+.provincesList li:hover{
+  background-image: linear-gradient(rgb(198, 70, 245), rgb(72, 16, 72));
+}
+
+.panel p::before{
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a metus eget magna varius"
+              "tincidunt malesuada pallentesque augue. Proin sit amet augue sed mauris rutrum imperdiet."
+              "Pallentesque hendrerit, lectus ac malesuada rutrum, nibh metus malesuada mauris, sed rutrum"
+              "purus tellus pharetra justo. Vestibulum bibendum, metus eu semper tempus, ex elit sollicitudin"
+              "nisi, eget maximus massa justo eget mauris. Vivamus pharetra nisi ac auctor dictum. Vestibulum"
+              "interdum tempor lacus quis pallentesque. Interdum et malesuada fames ac ante ipsum primis"
+              "in faucibus. Phasellus et lacus massa. Ut a odio libero. Ut id est laoreet, euismod nulla"
+              "in, tincidunt turpis. Donec eu massa quam.";
 }
