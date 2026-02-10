@@ -93,6 +93,12 @@ header *{
   margin-top: 10px;
 }
 
+.hasSubmenu{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
 .button{
   color: rgb(72, 16, 72);
   background-color: rgb(198, 70, 245);
@@ -170,12 +176,12 @@ header *{
 .subbuttons{
   position: absolute;
   display: none;
-  visibility: none;
   top: 100%;
   left: 10px;
-  transform: skew(0);
-  text-align: right;
-  background-color: rgb(148, 18, 188);
+}
+
+.hasSubmenu:hover .subbuttons{
+  display: block;
 }
 
 .subbuttons .submenu{
@@ -185,7 +191,6 @@ header *{
 
 .button:hover .subbuttons{
   display: block;
-  visibility: visible;
 }
 
 .submenu{
@@ -201,4 +206,53 @@ header *{
 
 .button:has(.subbuttons:hover){
   color: black;
+}
+
+.tabContent .panel{
+  display: none;
+  margin-top: 20px;
+}
+
+.tabContent .default{
+  display: block;
+}
+
+.tabContent .panel:target{
+  display: block;
+}
+
+.tabContent .panel:target ~ .default{
+  display: none;
+}
+
+.canadaMap *{
+  text-decoration: none;
+}
+
+.hasSubmenu{
+  position: relative;
+}
+
+@media (max-width: 600px){
+  .main{
+    flex-direction: column;
+  }
+
+  .main .canadaList,
+  .main .canadaMap,
+  .main .itJobs{
+    width: 100%;
+  }
+
+  .job{
+    width: 95%;
+  }
+
+  .jobsTab{
+    flex-direction: column;
+  }
+
+  .footer{
+    width: 90%;
+  }
 }
