@@ -11,3 +11,9 @@ p {
   color: rgb(77, 14, 102);
 }
 
+.courseButton{
+  transition: 0.5s;
+  :hover{
+    color: black; /* just using this to test if hover works in this context */
+  }
+}
