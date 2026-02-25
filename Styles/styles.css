@@ -3,17 +3,137 @@
   background-color: rgb(255, 255, 255);
 }
 
-h1 {
-  color: rgb(77, 14, 102);
+header h1{
+  text-align: left;
+  color: purple;
+  font-weight: bold;
+  background-color: transparent;
+  text-shadow: 2px 1px 2px black;
 }
 
 p {
-  color: rgb(77, 14, 102);
+  color: black;
+  background-color: transparent;
+}
+
+header{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-image: url("../Images/CSimage2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px;
+  p{
+    color: rgb(255, 255, 255);
+  }
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 50px;
+  margin: 20px;
 }
 
 .courseButton{
-  transition: 0.5s;
-  :hover{
-    color: black; /* just using this to test if hover works in this context */
+  text-align: center;
+  p{
+    font-weight: bold;
   }
+  span{
+    visibility: hidden;
+  }
+  img{
+  transition: 0.2s;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  }
+  img:hover{
+    scale: 1.2;
+  }
+}
+
+.courseButton:hover{
+  span{
+    visibility: visible;
+  }
+}
+
+.programButton{ 
+  border: 1px solid rgb(186, 186, 186);
+  border-radius: 20px;
+  padding: 10px;
+  img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  p{
+    font-size: 14px;
+    color: grey;
+  }
+}
+
+.browseButton{
+  text-decoration: none;
+  color: white;
+  background-color: rgb(235, 182, 37);
+  opacity: 100%;
+  padding: 5px;
+  border-radius: 2px;
+  transition: 0.2s;
+}
+
+.browseButton:hover{
+  color: black;
+  opacity: 50%;
+}
+
+.imageOverlay{
+  position: relative;
+  width: 100%;
+}
+
+.overlay{
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(0,0,0, 0.5);
+  p{
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    margin: 0;
+    text-align: center;
+  }
+}
+
+footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: purple;
+  color: white;
+  text-align: left;
+  padding: 2px 10px;
+  span{
+    background-color: purple;
+    color: white;
+  }
+  span::before{
+    content: "\00A9 ";
+  }
+  p{
+    text-align: right;
+    color: white;
+  }
+}
+
+.headerRight{
+  background-color: transparent;
 }
