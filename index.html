@@ -22,8 +22,183 @@
     />
     
     <link rel="stylesheet" href="Styles/styles.css" />
+    <script>
+      let user = "" //so I can use it for log-in and for the extra button
+
+      function updateAccess(user){ //to update the buttons
+        const logButton = document.getElementById("logButton");
+        const stuButton = document.getElementById("stuButton");
+        const adButton = document.getElementById("adButton");
+        const exButton = document.getElementById("exButton");
+        //hiding all the buttons
+        stuButton.classList.add("hidden");
+        adButton.classList.add("hidden");
+        logButton.classList.add("hidden");
+        exButton.classList.add("hidden");
+        if (user == "student"){
+          stuButton.classList.remove("hidden"); 
+        } 
+        if (user == "admin" || user == "Admin" || user == "ADMIN"){
+          stuButton.classList.remove("hidden"); 
+          adButton.classList.remove("hidden");
+          exButton.classList.remove("hidden");
+        }
+        if (user == "tester" || user == "designer"){
+          stuButton.classList.remove("hidden");
+          exButton.classList.remove("hidden");
+        }
+      }
+
+      function logIn(){
+        let valid = false;
+        user = prompt("Enter User:", "");
+        let validUsers = ["admin", "Admin", "ADMIN", "designer", "tester", "student"]
+        for (validUser of validUsers){
+          if (user == validUser) valid = true;
+        }
+        if (valid){
+          let attempts = 1;
+          if (user == "admin" || user == "Admin" || user == "ADMIN"){
+            attempts = 2;
+            user = "admin";
+          } 
+          else if (user == "designer" || user == "tester") attempts = 3;
+          for (attempts; attempts>0; attempts--){
+            if (user == "student"){
+              updateAccess(user);
+              break;
+            }
+            else if (user == "admin"){ //variations of admin
+              password = passwordGenerator();
+            }
+            else if (user == "designer"){
+              password = "-111"
+            }
+            else if (user == "tester"){
+              password = "-222"
+            }
+            let pass = prompt("Password: ", "");
+            if (pass.toString() == password){
+              updateAccess(user);
+              break;
+            } 
+            else alert("error: password invalid")
+          }
+          if (attempts == 0) alert("number of attempts ran out"); //could remove the log-in button after
+        }
+        else alert("There is no such user");
+      }
+
+      function passwordGenerator(){
+        let password = "";
+        for (i=0; i<6; i++){
+          let a = Math.round(Math.random()*9);
+          password += a.toString();
+        }
+        alert(password); //just to see if it works
+        return password;
+      }
+
+      function sayHi(){
+        let msg = "";
+        alert("Please enter your language");
+        let lang=prompt("Allowed Values: Eng, Fr, De, Spa", "Eng");
+        switch (lang){
+          case "Eng":
+            msg = "Hello";
+            break;
+          case "Fr":
+            msg = "Bonjour";
+            break;
+          case "De":
+            msg = "Hallo";
+            break;
+          case "Spa":
+            msg = "Hola";
+            break;
+          default:
+            msg = "I dont know your language";
+        }
+        alert(msg);
+      }
+
+      function favoriteAnimal(){
+        let age=prompt("What is your age?", 0);
+        if (age < 18){
+          alert("Content is not available due to age restrictions");
+        }
+        else if (age > 55){
+          document.getElementById("oldText").classList.remove("hidden");
+        }
+        else{
+          document.getElementById("ageImage").classList.remove("hidden");
+          let animal=prompt("What is your favorite animal?", "");
+          switch (animal){
+            case "Cat":
+              document.getElementById("animalImage").src = "Images/Cat.jpg";
+              document.getElementById("animalImage").classList.remove("hidden");
+              break;
+            case "Dog":
+              document.getElementById("animalImage").src = "Images/Dog.jpg";
+              document.getElementById("animalImage").classList.remove("hidden");
+              break;
+            case "Frog":
+              document.getElementById("animalImage").src = "Images/Frog.jpg";
+              document.getElementById("animalImage").classList.remove("hidden");
+              break;
+            case "Mouse":
+              document.getElementById("animalImage").src = "Images/Mouse.jpg";
+              document.getElementById("animalImage").classList.remove("hidden");
+              break;
+          }
+        }
+      }
+
+      function extraButton(){
+        if (user == "designer" || user == "tester"){
+          let portNum = prompt("How many portfolios do you have?", 0);
+          let yearBorn = prompt("What year were you born?", 2000);
+          let discountType = "";
+          if (user == "designer") discountType = "QA Pro";
+          else discountType = "QA Pro";
+          let currYear = new Date().getFullYear();
+          let discountNum = 0;
+          if (currYear - yearBorn > 18){
+            discountNum = 7;
+            if (portNum >= 10 && portNum <= 20){
+              alert(`You have been given a ${discountNum}% discount on an optional course for ${discountType}`);
+            }
+          }
+          else if (currYear - yearBorn >= 14){ //already confirmed 18 or under
+            discountNum = 10;
+            if (portNum >= 5 && portNum <= 10){
+              alert(`You have been given a ${discountNum}% discount on an optional course for ${discountType}`);
+            }
+          }
+        }
+        else if (user == "admin"){
+          let age = prompt("What is your age?", 0);
+          let yearAdmit = prompt("What year did you start your program at NWP?", 2000);
+          let yearFinal = yearAdmin + 4; //bachelors should take 4 years as a full-time student
+          let ageFinal = age + 4;
+          alert(`You will be ${ageFinal} years old when you recieve your bachelors in ${yearFinal}`);
+        }
+      }
+    </script>
   </head>
   <body>
-    
+    <button onclick="logIn()" id="logButton" class="button">Log In</button>
+    <button onclick="sayHi()" id="stuButton" class="button hidden">Say Hi</button>
+    <button onclick="favoriteAnimal()" id="adButton" class="button hidden">Favorite Animal</button>
+    <button onlick="extraButton()" id="exButton" class="button hidden"></button>
+    <p id="oldText" class="hidden" width="50%">
+      Much like mathematics, programming is a logico-deductive system. 
+      And I think the important point that I am making is that in a purely 
+      logico-deductive system there is no philosophy - everything is known. 
+      However, insofar as there is art in mathematics, there is philosophy 
+      in mathematics. Insofar as there is art in programming, there is 
+      philosophy in programming.</p>
+      <br/> <img src="Images/ageImage.jpg" id="ageImage" width="300px" height="300px" class="hidden">
+      <br/> <img id="animalImage" width="200px" height="200px" class="hidden">
   </body>
 </html>
