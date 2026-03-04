@@ -49,10 +49,11 @@
         }
       }
 
-      function logIn(){
+      const logIn = function(){
         let valid = false;
         user = prompt("Enter User:", "");
-        let validUsers = ["admin", "Admin", "ADMIN", "designer", "tester", "student"]
+        user = user.toLowerCase();
+        let validUsers = ["admin", "designer", "tester", "student"]
         for (validUser of validUsers){
           if (user == validUser) valid = true;
         }
@@ -60,7 +61,7 @@
           let attempts = 1;
           if (user == "admin" || user == "Admin" || user == "ADMIN"){
             attempts = 2;
-            user = "admin";
+            password = passwordGenerator();
           } 
           else if (user == "designer" || user == "tester") attempts = 3;
           for (attempts; attempts>0; attempts--){
@@ -68,8 +69,8 @@
               updateAccess(user);
               break;
             }
-            else if (user == "admin"){ //variations of admin
-              password = passwordGenerator();
+            else if(user == "admin"){
+              alert(password); //just so you know what it is (testing)
             }
             else if (user == "designer"){
               password = "-111"
@@ -89,13 +90,12 @@
         else alert("There is no such user");
       }
 
-      function passwordGenerator(){
+      const passwordGenerator = function(){
         let password = "";
         for (i=0; i<6; i++){
           let a = Math.round(Math.random()*9);
           password += a.toString();
         }
-        alert(password); //just to see if it works
         return password;
       }
 
@@ -154,24 +154,24 @@
         }
       }
 
-      function extraButton(){
+      const extraButton = function(){
         if (user == "designer" || user == "tester"){
           let portNum = prompt("How many portfolios do you have?", 0);
           let yearBorn = prompt("What year were you born?", 2000);
           let discountType = "";
-          if (user == "designer") discountType = "QA Pro";
+          if (user == "designer") discountType = "Adobe XD";
           else discountType = "QA Pro";
           let currYear = new Date().getFullYear();
           let discountNum = 0;
-          if (currYear - yearBorn > 18){
+          if (currYear - parseInt(yearBorn) > 18){
             discountNum = 7;
-            if (portNum >= 10 && portNum <= 20){
+            if (parseInt(portNum) >= 10 && parseInt(portNum) <= 20){
               alert(`You have been given a ${discountNum}% discount on an optional course for ${discountType}`);
             }
           }
-          else if (currYear - yearBorn >= 14){ //already confirmed 18 or under
+          else if (parseInt(currYear) - parseInt(yearBorn) >= 14){ //already confirmed 18 or under
             discountNum = 10;
-            if (portNum >= 5 && portNum <= 10){
+            if (parseInt(portNum) >= 5 && parseInt(portNum) <= 10){
               alert(`You have been given a ${discountNum}% discount on an optional course for ${discountType}`);
             }
           }
@@ -179,8 +179,8 @@
         else if (user == "admin"){
           let age = prompt("What is your age?", 0);
           let yearAdmit = prompt("What year did you start your program at NWP?", 2000);
-          let yearFinal = yearAdmin + 4; //bachelors should take 4 years as a full-time student
-          let ageFinal = age + 4;
+          let yearFinal = parseInt(yearAdmit) + 4; //bachelors should take 4 years as a full-time student
+          let ageFinal = parseInt(age) + 4;
           alert(`You will be ${ageFinal} years old when you recieve your bachelors in ${yearFinal}`);
         }
       }
@@ -190,8 +190,8 @@
     <button onclick="logIn()" id="logButton" class="button">Log In</button>
     <button onclick="sayHi()" id="stuButton" class="button hidden">Say Hi</button>
     <button onclick="favoriteAnimal()" id="adButton" class="button hidden">Favorite Animal</button>
-    <button onlick="extraButton()" id="exButton" class="button hidden"></button>
-    <p id="oldText" class="hidden" width="50%">
+    <button onclick="extraButton()" id="exButton" class="button hidden">Extra</button>
+    <p id="oldText" class="hidden">
       Much like mathematics, programming is a logico-deductive system. 
       And I think the important point that I am making is that in a purely 
       logico-deductive system there is no philosophy - everything is known. 
