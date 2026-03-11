@@ -59,3 +59,9 @@ a:has(p:hover){
 a p:hover{
   color: white;
 }
+
+img{ /* just to prevent it from looking too bad on mobile */
+  max-height: 20%;
+  max-height: 20%;
+  border-radius: 10px;
+}
