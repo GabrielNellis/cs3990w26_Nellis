@@ -1,17 +1,61 @@
 * {
-  color: rgb(1, 1, 69);
-  background-color: rgb(133, 242, 209)!important;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  text-align: center;
 }
 
-h1 {
-  color: rgb(125, 24, 46);
-  background-color: rgb(216, 230, 91);
+.outerBox{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background-color: rgb(136, 31, 31);
+  gap: 20px;
+  > p{
+    background-color: rgb(63, 224, 63);
+    padding: 10px;
+    color: white;
+  }
 }
 
-h2 {
-  color: rgb(5, 54, 122);
+.innerBox > *{
+  background-color: rgb(242, 101, 101);
 }
 
-p {
-  color: rgb(3, 60, 62);
+.innerBox{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+  background-color: transparent;
+  align-items: center;
+  img:hover{
+    border: 10px solid white;
+    border-radius: 10px;
+    scale: 0.9;
+  }
+}
+
+footer{
+  background-color: rgb(140, 106, 129);
+  span{
+    display: none;
+  }
+  *{
+    color: white;
+    background-color: transparent;
+  }
+}
+
+footer:hover span{
+  display: inline;
+}
+
+a > p{
+  background-color: transparent;
+}
+
+a:has(p:hover){
+  text-decoration: none;
+}
+
+a p:hover{
+  color: white;
 }
