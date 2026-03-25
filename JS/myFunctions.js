@@ -4,7 +4,6 @@ import {ColorButton} from "./myColorButton.js";
 export function buildButtons(arrText, arrColors, fontColors){
     const arrButtons = [];
     arrText.forEach((text, index) => {
-        console.log(text, index);
         const bgColor = arrColors[index];
         const title = `${text} is showing on ${bgColor} background`;
         let btn;
