@@ -4,5 +4,52 @@
 }
 
 button{
-  background-color: blue;
+  background: linear-gradient(to right, rgb(42, 0, 42), rgb(179, 3, 179));
+  padding: 5px 25px;
+  border-radius: 10px;
+  border-color: transparent;
+  p{
+    background: linear-gradient(to right,  rgb(172, 60, 216), rgb(255, 166, 0));
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+  }
+}
+
+button:hover{
+  background: linear-gradient(to bottom, rgb(42, 0, 42), rgb(179, 3, 179));
+  border-color: black;
+}
+
+.game{
+  text-align: center;
+}
+
+.hidden *{
+  display: none !important;
+}
+
+.score{
+  background: linear-gradient(to right, rgb(200, 88, 210), rgb(250, 183, 58));
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.score:hover{
+  background: linear-gradient(to right, red, rgb(250, 183, 58));
+  /* need the below again otherwise it applies it to the background again instead of the text */
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.timer{
+  background: linear-gradient(to right, red, rgb(200, 88, 210));
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
