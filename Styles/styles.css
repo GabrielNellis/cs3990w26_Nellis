@@ -4,6 +4,10 @@
 }
 
 button{
+  border-radius: 5px;
+}
+
+.startButton{
   background: linear-gradient(to right, rgb(42, 0, 42), rgb(179, 3, 179));
   padding: 5px 25px;
   border-radius: 10px;
@@ -16,21 +20,35 @@ button{
   }
 }
 
-button:hover{
+.startButton:hover{
   background: linear-gradient(to bottom, rgb(42, 0, 42), rgb(179, 3, 179));
   border-color: black;
+}
+
+.startButton:active p{
+  background: linear-gradient(to right, red, rgb(255, 166, 0));
+  background-clip: text;
+  color: transparent;
 }
 
 .game{
   text-align: center;
 }
 
-.hidden *{
+.hidden, .hidden *{
   display: none !important;
 }
 
 .score{
   background: linear-gradient(to right, rgb(200, 88, 210), rgb(250, 183, 58));
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stars{
+  background: linear-gradient(to right, rgb(100, 5, 109), rgb(196, 100, 205));
   display: inline-block;
   -webkit-background-clip: text;
   background-clip: text;
@@ -52,4 +70,40 @@ button:hover{
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.gameBoard{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  width: 90%;
+  margin-left: 5%;
+  height: 100%;
+  background-color: rgb(189, 139, 189);
+  border: 5px solid black;
+  border-radius: 10px;
+  grid-auto-rows: minmax(150px, auto);
+}
+
+.tile{
+  display: block;
+  background: grey;
+  box-shadow: 0px 0px 5px black;
+  margin: 10px;
+  padding: 10px;
+  li{
+    list-style: none;
+  }
+}
+
+.questions{
+  text-align: left;
+}
+
+/* all of the below JUST to make the button the only non-transparent element */
+.questions,
+.questions p,
+.questions ul,
+.questions ul *{
+  background-color: transparent;
 }

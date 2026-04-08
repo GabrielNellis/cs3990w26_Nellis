@@ -25,14 +25,19 @@
   </head>
   <body>
     <h1>Final Project: Game based Quiz</h1>
-    <button id="startGame">
+    <button id="startGame" class="startButton">
       <p>Start GAME!</p>
     </button>
     <!-- this div below is only shown when the game starts -->
      <div id="gameShw" class="game hidden">
-      <h2 id="score" class="score">Your score: </h2>
+      <h2 class="score">Your score: </h2>
+      <h2 id="score" class="stars"></h2>
       </br> <!-- need the break in there otherwise score and time are next to each other -->
       <h2 id="timer" class="timer">0</h2> 
+      <h3 id="answer" class="answer hidden">Wrong answer!</h3>
+      <h1 class="gameOver hidden">Game OVER!</h1>
+      <div id="gameBoard" class="gameBoard">
+      </div>
      </div>
     <script type="module" src="./JS/gameshow.js"></script>
   </body>
