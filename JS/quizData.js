@@ -53,11 +53,32 @@ export function changeScore(num){
     score = score + num;
 }
 
-export function generateTiles() { //only going to do the questions array for now
-    questions.forEach(tile => {
-        new Tile(tile);
+export function generateTiles(arr) { //only going to do the questions array for now
+    // questions.forEach(tile => {
+    //     new Tile(tile);
+    // });
+    // assets.forEach(asset => {
+    //     new AssetTile(asset);
+    // });
+
+    let array1 = [...questions, ...assets];
+    shuffleArr(array1);
+    array1.forEach(tile => {
+        if ("value" in tile){
+            new AssetTile(tile);
+        }
+        else{
+            new Tile(tile);
+        }
     });
-    assets.forEach(asset => {
-        new AssetTile(asset);
-    });
+}
+
+function shuffleArr(array){
+    let current = array.length;
+    while (current !== 0){
+        let random = Math.floor(Math.random() * current);
+        current--;
+        [array[current], array[random]] = [array[random], array[current]];
+    }
+    return array;
 }

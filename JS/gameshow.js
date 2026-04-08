@@ -27,7 +27,7 @@ export function timeUp(){
         tile.remove();
     });
     let text = "card->DONE";
-    updateScore(text);
+    updateScore(0, text);
 }
 
 export function updateScore(num, feedback){
