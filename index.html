@@ -30,12 +30,15 @@
     </button>
     <!-- this div below is only shown when the game starts -->
      <div id="gameShw" class="game hidden">
-      <h2 class="score">Your score: </h2>
-      <h2 id="score" class="stars"></h2>
-      </br> <!-- need the break in there otherwise score and time are next to each other -->
-      <h2 id="timer" class="timer">0</h2> 
-      <h3 id="answer" class="answer hidden">Wrong answer!</h3>
-      <h1 class="gameOver hidden">Game OVER!</h1>
+      <div class="details"> <!-- just to put game details in -->
+        <h2 class="score">Your score: </h2>
+        <h2 id="score" class="stars"></h2>
+        </br> <!-- need the break in there otherwise score and time are next to each other -->
+        <h2 id="timer" class="timer">0</h2> 
+        <h3 id="answer" class="answer"></h3>
+        </br> <!-- need the break in there otherwise game over and time are next to each other -->
+        <h1 id="gameOver" class="gameOver hidden">Game OVER!</h1>
+      </div>
       <div id="gameBoard" class="gameBoard">
       </div>
      </div>

@@ -55,7 +55,7 @@ button{
   -webkit-text-fill-color: transparent;
 }
 
-.score:hover{
+.details:hover .score{
   background: linear-gradient(to right, red, rgb(250, 183, 58));
   /* need the below again otherwise it applies it to the background again instead of the text */
   display: inline-block;
@@ -83,6 +83,7 @@ button{
   border: 5px solid black;
   border-radius: 10px;
   grid-auto-rows: minmax(150px, auto);
+  min-height: 300px; /* just to display an empty board upon game over */
 }
 
 .tile{
@@ -106,4 +107,24 @@ button{
 .questions ul,
 .questions ul *{
   background-color: transparent;
+}
+
+.answer{
+  background: linear-gradient(to left, rgb(100, 5, 109), rgb(196, 100, 205));
+  color: white;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  display: inline-block;
+}
+
+.answer.show{
+  opacity: 1;
+}
+
+.gameOver{
+  background: linear-gradient(to right, red, purple);
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

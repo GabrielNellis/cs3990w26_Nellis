@@ -1,4 +1,4 @@
-import {gameOver} from "./gameshow.js"
+import {timeUp} from "./gameshow.js"
 let startTime = 20;
 
 document.getElementById("timer").textContent =
@@ -12,11 +12,7 @@ export function timer(){
             `${seconds} secs.`;
         if (seconds == 0){
             clearInterval(gameTime);
-            endGame();
+            timeUp();
         }
     }, 1000);
-}
-
-function endGame(){
-    gameOver(); //only putting it here to prevent infinite recurrsion
 }
