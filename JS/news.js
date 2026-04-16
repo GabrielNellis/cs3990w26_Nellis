@@ -6,16 +6,23 @@ export class News{
 
     render(){
         this.element = document.createElement("div");
-        this.element.setAttribute("id", "news");
-        const elemParent = document.getElementById("newsGen");
+        this.element.classList.add("news");
+        this.elemParent = document.getElementById("newsGen");
         const nameElem = document.createElement("p");
         const removeBtn = document.createElement("button");
         this.element.textContent = this.name;
         nameElem.textContent = "This is some news, meant to be news for the news. Did you knews?";
         removeBtn.textContent = "Remove";
         removeBtn.addEventListener("click", () => {
-            elemParent.removeChild(this.element);
+            this.elemParent.removeChild(this.element);
+            removed();
         });
-        elemParent.appendChild(this.element);
+        this.element.appendChild(nameElem);
+        this.element.appendChild(removeBtn);
+        this.elemParent.appendChild(this.element);
+    }
+
+    destroy(){
+        this.elemParent.removeChild(this.element);
     }
 }

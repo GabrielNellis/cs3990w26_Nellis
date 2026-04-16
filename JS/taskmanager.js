@@ -4,7 +4,7 @@ class TaskManager{
     constructor(){
         this.currentTask = null;
         this.tasks = {
-            task1: NumberGenerator()
+            task1: NumberGenerator
         };
     }
 
@@ -28,3 +28,8 @@ class TaskManager{
         this.loadTask("task1");
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const manager = new TaskManager();
+    manager.init();
+});
