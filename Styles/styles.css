@@ -1,17 +1,22 @@
 * {
-  color: rgb(1, 1, 69);
-  background-color: rgb(133, 242, 209)!important;
+  color: black;
+  background-color: white;
 }
 
-h1 {
-  color: rgb(125, 24, 46);
-  background-color: rgb(216, 230, 91);
+header{
+  background-color: rgb(101, 185, 101);
+  padding: 10px;
+  button{
+    background-color: rgb(14, 79, 14);
+    color: rgb(74, 238, 74);
+  }
 }
 
-h2 {
-  color: rgb(5, 54, 122);
+.course{
+  padding: 5px;
+  display: inline-block;
 }
 
-p {
-  color: rgb(3, 60, 62);
+.selected{
+  border: 5px solid black;
 }
