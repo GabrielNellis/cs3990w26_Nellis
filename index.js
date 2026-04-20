@@ -30,25 +30,29 @@ let courses = [
     }
 ];
 
-const courseOptions = document.createElement("header");
-document.body.prepend(courseOptions);
 courses.forEach(course => {
     const btn = document.createElement("button");
     btn.textContent = course.coursename;
-    btn.classList.add(".course");
+    btn.classList.add("course");
     btn.addEventListener("click", () => {
-        btn.classList.add(".selected");
+        const selectedOne = document.querySelectorAll(".selected");
+        selectedOne.forEach(selected => {
+            console.log(selected);
+            selected.classList.remove("selected");
+        });
+        btn.classList.add("selected");
         document.getElementById("courseDesc").innerHTML = course.descr;
         if (!(course.prereqs.length > 0)){
-            document.getElementById("coursePrereqs").innerHTML = "No Prerequisites"; //removing a potential list
+            document.getElementById("coursePrereqs").innerHTML = "<h3><b>No Prerequisites</b></h3>"; //removing a potential list
         }
         else{
             const preqs = document.getElementById("coursePrereqs");
-            const preList = document.createElement("ol");
-            preList.type = "1";
-            preqs.innerHTML = "Complete the Following:";
+            preqs.innerHTML = `<h3><b>Complete the Following:</b></h3>`;
             preqs.innerHTML += course.prereqs.map(course => `<li>${course}</li>`).join("");
         }
     });
-    courseOptions.appendChild(btn);
+    document.getElementById("courses").appendChild(btn);
 });
+
+const firstBtn = document.querySelector("div ul button:first-child");
+firstBtn.click();
